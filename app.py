@@ -7,6 +7,16 @@ import io
 import base64
 
 def main():
+
+    if not os.path.exists('jpeg_compressor'):
+        st.error("""
+        JPEG compressor engine not found! Please ensure:
+        1. The 'jpeg_compressor' binary exists
+        2. It has execute permissions
+        """)
+        return
+    
+    
     st.title("JPEG Compression Tool")
     st.write("Upload an image and adjust compression quality")
     
